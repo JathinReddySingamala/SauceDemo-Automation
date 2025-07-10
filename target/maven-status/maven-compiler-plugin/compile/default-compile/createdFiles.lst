@@ -1,0 +1,9 @@
+Framework\Design\PageObjects\Homepage.class
+Framework\Design\PageObjects\Checkoutpage3.class
+Framework\Design\Report\ExtentReporterNG.class
+Framework\Design\PageObjects\Checkoutpage1.class
+Framework\Design\PageObjects\LoginPage.class
+Framework\Desgin\Abstract\AbstractComponents.class
+Resources\ConfigReader.class
+Framework\Design\PageObjects\CartPage.class
+Framework\Design\PageObjects\Checkoutpage2.class

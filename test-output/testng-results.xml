@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="15" total="28" passed="13" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-07-10T15:08:50 GMT-04:00" name="Suite" finished-at="2025-07-10T15:09:14 GMT-04:00" duration-ms="24024">
+    <groups>
+      <group name="positive tests">
+        <method signature="LoginTest.testValidLogin()[pri:0, instance:Framework.Desgin.Tests.LoginTest@1f3f02ee]" name="testValidLogin" class="Framework.Desgin.Tests.LoginTest"/>
+        <method signature="HomepageTest.logoutTest()[pri:0, instance:Framework.Desgin.Tests.HomepageTest@495b0487]" name="logoutTest" class="Framework.Desgin.Tests.HomepageTest"/>
+        <method signature="LoginTest.testValidLogin()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7a1a3478]" name="testValidLogin" class="Framework.Desgin.Tests.LoginTest"/>
+      </group> <!-- positive tests -->
+      <group name="negative tests">
+        <method signature="LoginTest.loginWithEmptyCredentials()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" name="loginWithEmptyCredentials" class="Framework.Desgin.Tests.LoginTest"/>
+        <method signature="LoginTest.loginWithEmptyPassword()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" name="loginWithEmptyPassword" class="Framework.Desgin.Tests.LoginTest"/>
+        <method signature="LoginTest.loginWithEmptyUsername()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" name="loginWithEmptyUsername" class="Framework.Desgin.Tests.LoginTest"/>
+        <method signature="LoginTest.loginWithInvalidPassword()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" name="loginWithInvalidPassword" class="Framework.Desgin.Tests.LoginTest"/>
+        <method signature="LoginTest.loginWithInvalidUserName()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" name="loginWithInvalidUserName" class="Framework.Desgin.Tests.LoginTest"/>
+        <method signature="LoginTest.loginWithlock_outUserCredentials()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" name="loginWithlock_outUserCredentials" class="Framework.Desgin.Tests.LoginTest"/>
+      </group> <!-- negative tests -->
+      <group name="regression">
+        <method signature="EndToEndTest.CompleteEndToEndTest(java.util.HashMap)[pri:0, instance:Framework.Desgin.Tests.EndToEndTest@4dd02341]" name="CompleteEndToEndTest" class="Framework.Desgin.Tests.EndToEndTest"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="CartpageTest.testCartPage()[pri:0, instance:Framework.Desgin.Tests.CartpageTest@4748a0f9]" name="testCartPage" class="Framework.Desgin.Tests.CartpageTest"/>
+        <method signature="CheckoutpageTest.testCheckoutPage()[pri:0, instance:Framework.Desgin.Tests.CheckoutpageTest@4b14918a]" name="testCheckoutPage" class="Framework.Desgin.Tests.CheckoutpageTest"/>
+        <method signature="HomepageTest.testHomepageElements()[pri:0, instance:Framework.Desgin.Tests.HomepageTest@34a875b3]" name="testHomepageElements" class="Framework.Desgin.Tests.HomepageTest"/>
+        <method signature="LoginTest.testValidLogin()[pri:0, instance:Framework.Desgin.Tests.LoginTest@1f3f02ee]" name="testValidLogin" class="Framework.Desgin.Tests.LoginTest"/>
+        <method signature="LoginTest.testValidLogin()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7a1a3478]" name="testValidLogin" class="Framework.Desgin.Tests.LoginTest"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2025-07-10T15:08:50 GMT-04:00" name="Regression Test" finished-at="2025-07-10T15:09:03 GMT-04:00" duration-ms="12878">
+      <class name="Framework.Desgin.Tests.EndToEndTest">
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.EndToEndTest@4dd02341]" started-at="2025-07-10T15:08:50 GMT-04:00" name="goTo" finished-at="2025-07-10T15:08:57 GMT-04:00" duration-ms="6475" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="CompleteEndToEndTest(java.util.HashMap)[pri:0, instance:Framework.Desgin.Tests.EndToEndTest@4dd02341]" started-at="2025-07-10T15:08:57 GMT-04:00" name="CompleteEndToEndTest" data-provider="getData" finished-at="2025-07-10T15:09:02 GMT-04:00" duration-ms="4740" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{firstName=John, lastName=Doe, password=secret_sauce, Zip/PostalCode=12345, productName=Sauce Labs Backpack, username=standard_user}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CompleteEndToEndTest -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.EndToEndTest@4dd02341]" started-at="2025-07-10T15:09:02 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:09:03 GMT-04:00" duration-ms="1267" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- Framework.Desgin.Tests.EndToEndTest -->
+    </test> <!-- Regression Test -->
+    <test started-at="2025-07-10T15:08:50 GMT-04:00" name="Positive TestCases" finished-at="2025-07-10T15:09:04 GMT-04:00" duration-ms="13942">
+      <class name="Framework.Desgin.Tests.HomepageTest">
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.HomepageTest@495b0487]" started-at="2025-07-10T15:08:59 GMT-04:00" name="goTo" finished-at="2025-07-10T15:09:02 GMT-04:00" duration-ms="3239" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="logoutTest()[pri:0, instance:Framework.Desgin.Tests.HomepageTest@495b0487]" started-at="2025-07-10T15:09:02 GMT-04:00" name="logoutTest" finished-at="2025-07-10T15:09:04 GMT-04:00" duration-ms="1491" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutTest -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.HomepageTest@495b0487]" started-at="2025-07-10T15:09:04 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:09:04 GMT-04:00" duration-ms="312" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- Framework.Desgin.Tests.HomepageTest -->
+      <class name="Framework.Desgin.Tests.LoginTest">
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7a1a3478]" started-at="2025-07-10T15:08:50 GMT-04:00" name="goTo" finished-at="2025-07-10T15:08:57 GMT-04:00" duration-ms="6717" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="testValidLogin()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7a1a3478]" started-at="2025-07-10T15:08:57 GMT-04:00" name="testValidLogin" finished-at="2025-07-10T15:08:58 GMT-04:00" duration-ms="1642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidLogin -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7a1a3478]" started-at="2025-07-10T15:08:58 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:08:59 GMT-04:00" duration-ms="460" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- Framework.Desgin.Tests.LoginTest -->
+    </test> <!-- Positive TestCases -->
+    <test started-at="2025-07-10T15:08:50 GMT-04:00" name="Smoke Test" finished-at="2025-07-10T15:09:13 GMT-04:00" duration-ms="23513">
+      <class name="Framework.Desgin.Tests.HomepageTest">
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.HomepageTest@34a875b3]" started-at="2025-07-10T15:09:00 GMT-04:00" name="goTo" finished-at="2025-07-10T15:09:02 GMT-04:00" duration-ms="2780" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="testHomepageElements()[pri:0, instance:Framework.Desgin.Tests.HomepageTest@34a875b3]" started-at="2025-07-10T15:09:02 GMT-04:00" name="testHomepageElements" finished-at="2025-07-10T15:09:04 GMT-04:00" duration-ms="1763" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomepageElements -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.HomepageTest@34a875b3]" started-at="2025-07-10T15:09:04 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:09:05 GMT-04:00" duration-ms="581" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- Framework.Desgin.Tests.HomepageTest -->
+      <class name="Framework.Desgin.Tests.LoginTest">
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.LoginTest@1f3f02ee]" started-at="2025-07-10T15:08:50 GMT-04:00" name="goTo" finished-at="2025-07-10T15:08:58 GMT-04:00" duration-ms="8029" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="testValidLogin()[pri:0, instance:Framework.Desgin.Tests.LoginTest@1f3f02ee]" started-at="2025-07-10T15:08:58 GMT-04:00" name="testValidLogin" finished-at="2025-07-10T15:08:59 GMT-04:00" duration-ms="1092" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidLogin -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.LoginTest@1f3f02ee]" started-at="2025-07-10T15:08:59 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:09:00 GMT-04:00" duration-ms="374" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- Framework.Desgin.Tests.LoginTest -->
+      <class name="Framework.Desgin.Tests.CartpageTest">
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.CartpageTest@4748a0f9]" started-at="2025-07-10T15:09:05 GMT-04:00" name="goTo" finished-at="2025-07-10T15:09:06 GMT-04:00" duration-ms="1713" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="testCartPage()[pri:0, instance:Framework.Desgin.Tests.CartpageTest@4748a0f9]" started-at="2025-07-10T15:09:06 GMT-04:00" name="testCartPage" finished-at="2025-07-10T15:09:09 GMT-04:00" duration-ms="2172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCartPage -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.CartpageTest@4748a0f9]" started-at="2025-07-10T15:09:09 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:09:09 GMT-04:00" duration-ms="236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- Framework.Desgin.Tests.CartpageTest -->
+      <class name="Framework.Desgin.Tests.CheckoutpageTest">
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.CheckoutpageTest@4b14918a]" started-at="2025-07-10T15:09:09 GMT-04:00" name="goTo" finished-at="2025-07-10T15:09:11 GMT-04:00" duration-ms="2011" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="testCheckoutPage()[pri:0, instance:Framework.Desgin.Tests.CheckoutpageTest@4b14918a]" started-at="2025-07-10T15:09:11 GMT-04:00" name="testCheckoutPage" finished-at="2025-07-10T15:09:13 GMT-04:00" duration-ms="2438" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCheckoutPage -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.CheckoutpageTest@4b14918a]" started-at="2025-07-10T15:09:13 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:09:13 GMT-04:00" duration-ms="243" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- Framework.Desgin.Tests.CheckoutpageTest -->
+    </test> <!-- Smoke Test -->
+    <test started-at="2025-07-10T15:08:50 GMT-04:00" name="Negative TestCases" finished-at="2025-07-10T15:09:14 GMT-04:00" duration-ms="24024">
+      <class name="Framework.Desgin.Tests.LoginTest">
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:08:50 GMT-04:00" name="goTo" finished-at="2025-07-10T15:08:57 GMT-04:00" duration-ms="6826" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="loginWithEmptyCredentials()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:08:57 GMT-04:00" name="loginWithEmptyCredentials" finished-at="2025-07-10T15:08:58 GMT-04:00" duration-ms="1240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithEmptyCredentials -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:08:58 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:08:59 GMT-04:00" duration-ms="746" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:08:59 GMT-04:00" name="goTo" finished-at="2025-07-10T15:09:02 GMT-04:00" duration-ms="3348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="loginWithEmptyPassword()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:02 GMT-04:00" name="loginWithEmptyPassword" finished-at="2025-07-10T15:09:03 GMT-04:00" duration-ms="674" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithEmptyPassword -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:03 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:09:03 GMT-04:00" duration-ms="574" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:03 GMT-04:00" name="goTo" finished-at="2025-07-10T15:09:06 GMT-04:00" duration-ms="2023" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="loginWithEmptyUsername()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:06 GMT-04:00" name="loginWithEmptyUsername" finished-at="2025-07-10T15:09:06 GMT-04:00" duration-ms="472" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithEmptyUsername -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:06 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:09:06 GMT-04:00" duration-ms="202" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:06 GMT-04:00" name="goTo" finished-at="2025-07-10T15:09:08 GMT-04:00" duration-ms="1832" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="loginWithInvalidPassword()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:08 GMT-04:00" name="loginWithInvalidPassword" finished-at="2025-07-10T15:09:08 GMT-04:00" duration-ms="443" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidPassword -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:08 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:09:09 GMT-04:00" duration-ms="272" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:09 GMT-04:00" name="goTo" finished-at="2025-07-10T15:09:11 GMT-04:00" duration-ms="2229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="loginWithInvalidUserName()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:11 GMT-04:00" name="loginWithInvalidUserName" finished-at="2025-07-10T15:09:11 GMT-04:00" duration-ms="536" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidUserName -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:11 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:09:12 GMT-04:00" duration-ms="202" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method is-config="true" signature="goTo()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:12 GMT-04:00" name="goTo" finished-at="2025-07-10T15:09:13 GMT-04:00" duration-ms="1655" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goTo -->
+        <test-method signature="loginWithlock_outUserCredentials()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:13 GMT-04:00" name="loginWithlock_outUserCredentials" finished-at="2025-07-10T15:09:14 GMT-04:00" duration-ms="422" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithlock_outUserCredentials -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Framework.Desgin.Tests.LoginTest@7203c7ff]" started-at="2025-07-10T15:09:14 GMT-04:00" name="closeApplication" finished-at="2025-07-10T15:09:14 GMT-04:00" duration-ms="220" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- Framework.Desgin.Tests.LoginTest -->
+    </test> <!-- Negative TestCases -->
+  </suite> <!-- Suite -->
+</testng-results>

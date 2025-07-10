@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite parallel ="tests" name="Suite">
+ 
+ 
+ <listeners>
+ <listener class-name= "Framework.Desgin.TestComponents.Listeners"/>
+ <listener class-name= "Framework.Desgin.TestComponents.RetryListener"/>
+ </listeners>
+ 
+ 
+  <test thread-count="5" name="Smoke Test">  
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Framework.Desgin.Tests.LoginTest"/>
+      <class name="Framework.Desgin.Tests.HomepageTest"/>
+      <class name="Framework.Desgin.Tests.CartpageTest"/>
+      <class name="Framework.Desgin.Tests.CheckoutpageTest"/>
+    </classes>
+ </test> <!-- Test -->
+ 
+  <test thread-count="5" name="Regression Test">  
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Framework.Desgin.Tests.EndToEndTest"/>
+    </classes>
+ </test> <!-- Test -->
+
+  <test thread-count="5" name="Positive TestCases">  
+    <groups>
+      <run>
+        <include name="positive tests"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Framework.Desgin.Tests.LoginTest"/>
+      <class name="Framework.Desgin.Tests.HomepageTest"/>
+    </classes>
+ </test> <!-- Test -->
+ 
+  <test thread-count="5" name="Negative TestCases">  
+    <groups>
+      <run>
+        <include name="negative tests"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Framework.Desgin.Tests.LoginTest"/>
+    </classes>
+ </test> <!-- Test -->
+
+</suite> <!-- Suite -->

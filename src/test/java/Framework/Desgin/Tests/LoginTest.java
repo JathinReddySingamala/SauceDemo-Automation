@@ -14,7 +14,7 @@ public class LoginTest extends Basetest {
 
 	 @Test(groups = {"smoke","positive tests"})
 	 public void testValidLogin() {
-	    
+	    //hi
 	     homepage = loginPage.Sign_in("standard_user", "secret_sauce");
 	     Assert.assertTrue(homepage.isHomepageDisplayed(), "Homepage is not displayed after login");
 	     

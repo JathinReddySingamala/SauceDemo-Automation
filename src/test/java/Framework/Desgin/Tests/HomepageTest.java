@@ -13,7 +13,6 @@ public class HomepageTest extends Basetest {
 	@Test(groups = {"smoke"})
 	public void testHomepageElements() {
 		
-		//hi
 		
 		Homepage homepage =  loginPage.Sign_in("standard_user", "secret_sauce");
 		// Verify that the homepage is displayed by checking the number of products

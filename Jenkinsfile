@@ -43,7 +43,7 @@ pipeline {
                         env.SELECTED_GROUP = 'negative tests'
                         env.SELECTED_BROWSER = 'chrome'
                     } else if (commitMsg.contains("[positive_chrome]")) {
-                        env.SELECTED_GROUP = 'negative tests'
+                        env.SELECTED_GROUP = 'positive tests'
                         env.SELECTED_BROWSER = 'chrome'
                     } else if (commitMsg.contains("[regression_chrome]")) {
                         env.SELECTED_GROUP = 'regression'

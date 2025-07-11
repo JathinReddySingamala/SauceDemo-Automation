@@ -6,11 +6,6 @@ pipeline {
         choice(name: 'browserName', choices: ['chrome', 'chromeheadless', 'firefox', 'edge'], description: 'Select browser')
     }
 
-    environment {
-        SELECTED_GROUP = "${params.group}"
-        SELECTED_BROWSER = "${params.browserName}"
-    }
-
     stages {
         stage('Checkout Code') {
             steps {
@@ -18,51 +13,54 @@ pipeline {
             }
         }
 
-        stage('Determine Parameters from Commit Message') {
+        stage('Determine Parameters from Commit Message and Run Tests') {
             steps {
                 script {
+                    // Initialize default values from parameters
+                    def selectedGroup = params.group
+                    def selectedBrowser = params.browserName
+
+                    // Get latest commit message
                     def commitMsg = bat(script: 'git log -1 --pretty=%%B', returnStdout: true).trim()
                     echo "Commit message: ${commitMsg}"
 
+                    // Update values based on commit message keywords
                     if (commitMsg.contains("[smoke]")) {
-                        env.SELECTED_GROUP = 'smoke'
-                        env.SELECTED_BROWSER = 'chromeheadless'
+                        selectedGroup = 'smoke'
+                        selectedBrowser = 'chromeheadless'
                     } else if (commitMsg.contains("[regression]")) {
-                        env.SELECTED_GROUP = 'regression'
-                        env.SELECTED_BROWSER = 'chromeheadless'
+                        selectedGroup = 'regression'
+                        selectedBrowser = 'chromeheadless'
                     } else if (commitMsg.contains("[positive]")) {
-                        env.SELECTED_GROUP = 'positive tests'
-                        env.SELECTED_BROWSER = 'firefox'
+                        selectedGroup = 'positive tests'
+                        selectedBrowser = 'firefox'
                     } else if (commitMsg.contains("[negative]")) {
-                        env.SELECTED_GROUP = 'negative tests'
-                        env.SELECTED_BROWSER = 'edge'
+                        selectedGroup = 'negative tests'
+                        selectedBrowser = 'edge'
                     } else if (commitMsg.contains("[negative_chrome]")) {
-                        env.SELECTED_GROUP = 'negative tests'
-                        env.SELECTED_BROWSER = 'chrome'
+                        selectedGroup = 'negative tests'
+                        selectedBrowser = 'chrome'
                     } else if (commitMsg.contains("[positive_chrome]")) {
-                        env.SELECTED_GROUP = 'positive tests'
-                        env.SELECTED_BROWSER = 'chrome'
+                        selectedGroup = 'positive tests'
+                        selectedBrowser = 'chrome'
                     } else if (commitMsg.contains("[regression_chrome]")) {
-                        env.SELECTED_GROUP = 'regression'
-                        env.SELECTED_BROWSER = 'chrome'
+                        selectedGroup = 'regression'
+                        selectedBrowser = 'chrome'
                     } else {
                         echo "No keyword found in commit message, using parameter defaults."
                     }
 
-                    echo "Selected Group: ${env.SELECTED_GROUP}"
-                    echo "Selected Browser: ${env.SELECTED_BROWSER}"
-                }
-            }
-        }
+                    echo "Final Selected Group: ${selectedGroup}"
+                    echo "Final Selected Browser: ${selectedBrowser}"
 
-        stage('Run Maven Tests') {
-            steps {
-                bat """
-                    mvn clean test ^
-                    -DsuiteXmlFile=testng.xml ^
-                    -Dgroups=${env.SELECTED_GROUP} ^
-                    -Dbrowser=${env.SELECTED_BROWSER}
-                """
+                    // Run Maven command with resolved values
+                    bat """
+                        mvn clean test ^
+                        -DsuiteXmlFile=testng.xml ^
+                        -Dgroups=${selectedGroup} ^
+                        -Dbrowser=${selectedBrowser}
+                    """
+                }
             }
         }
     }

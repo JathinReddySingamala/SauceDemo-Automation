@@ -12,7 +12,7 @@ public class HomepageTest extends Basetest {
 
 	@Test(groups = {"smoke"})
 	public void testHomepageElements() {
-		// Verify that the homepage is displayed by checking the number of products 
+		 
 		Homepage homepage =  loginPage.Sign_in("standard_user", "secret_sauce");
 		// Verify that the homepage is displayed by checking the number of products
 		System.out.println("Number of products on homepage: " + homepage.getProducts().size());

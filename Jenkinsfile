@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // Get the latest commit message
-                    def commitMsg = sh(script: 'git log -1 --pretty=%B', returnStdout: true).trim()
+                    def commitMsg = bat(script: 'git log -1 --pretty=%%B', returnStdout: true).trim()
                     echo "Commit message: ${commitMsg}"
 
                     // Set parameters based on keywords in commit message
@@ -60,7 +60,7 @@ pipeline {
 
         stage('Run Maven Tests') {
             steps {
-                sh """
+                bat """
                     mvn clean test \
                     -DsuiteXmlFile=testng.xml \
                     -Dgroups='${env.SELECTED_GROUP}' \

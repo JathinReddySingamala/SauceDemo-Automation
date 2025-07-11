@@ -7,7 +7,6 @@ pipeline {
     }
 
     environment {
-        // Default to parameter values
         SELECTED_GROUP = "${params.group}"
         SELECTED_BROWSER = "${params.browserName}"
     }
@@ -22,11 +21,9 @@ pipeline {
         stage('Determine Parameters from Commit Message') {
             steps {
                 script {
-                    // Get the latest commit message
                     def commitMsg = bat(script: 'git log -1 --pretty=%%B', returnStdout: true).trim()
                     echo "Commit message: ${commitMsg}"
 
-                    // Set parameters based on keywords in commit message
                     if (commitMsg.contains("[smoke]")) {
                         env.SELECTED_GROUP = 'smoke'
                         env.SELECTED_BROWSER = 'chromeheadless'
@@ -39,7 +36,7 @@ pipeline {
                     } else if (commitMsg.contains("[negative]")) {
                         env.SELECTED_GROUP = 'negative tests'
                         env.SELECTED_BROWSER = 'edge'
-                    }else if (commitMsg.contains("[negative_chrome]")) {
+                    } else if (commitMsg.contains("[negative_chrome]")) {
                         env.SELECTED_GROUP = 'negative tests'
                         env.SELECTED_BROWSER = 'chrome'
                     } else if (commitMsg.contains("[positive_chrome]")) {
@@ -48,7 +45,7 @@ pipeline {
                     } else if (commitMsg.contains("[regression_chrome]")) {
                         env.SELECTED_GROUP = 'regression'
                         env.SELECTED_BROWSER = 'chrome'
-                    }  else {
+                    } else {
                         echo "No keyword found in commit message, using parameter defaults."
                     }
 
@@ -61,10 +58,10 @@ pipeline {
         stage('Run Maven Tests') {
             steps {
                 bat """
-                    mvn clean test \
-                    -DsuiteXmlFile=testng.xml \
-                    -Dgroups='${env.SELECTED_GROUP}' \
-                    -Dbrowser='${env.SELECTED_BROWSER}'
+                    mvn clean test ^
+                    -DsuiteXmlFile=testng.xml ^
+                    -Dgroups=${env.SELECTED_GROUP} ^
+                    -Dbrowser=${env.SELECTED_BROWSER}
                 """
             }
         }

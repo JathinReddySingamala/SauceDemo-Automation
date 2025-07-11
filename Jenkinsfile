@@ -58,8 +58,8 @@ pipeline {
                 bat """
                 mvn clean test ^
                 -DsuiteXmlFile=testng.xml ^
-                -Dgroups=\\"${selectedGroup}\\" ^
-                -Dbrowser=\\"${selectedBrowser}\\"
+                -Dgroups="${selectedGroup}" ^
+                -Dbrowser="${selectedBrowser}"
                 """
 
                     

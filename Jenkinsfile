@@ -54,12 +54,16 @@ pipeline {
                     echo "Final Selected Browser: ${selectedBrowser}"
 
                     // Run Maven command with resolved values
-                    bat """
-                        mvn clean test ^
-                        -DsuiteXmlFile=testng.xml ^
-                        -Dgroups=${selectedGroup} ^
-                        -Dbrowser=${selectedBrowser}
-                    """
+                
+                bat """
+                mvn clean test ^
+                -DsuiteXmlFile=testng.xml ^
+                -Dgroups=\\"${selectedGroup}\\" ^
+                -Dbrowser=\\"${selectedBrowser}\\"
+                """
+
+                    
+
                 }
             }
         }

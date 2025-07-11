@@ -56,7 +56,7 @@ pipeline {
                     // Run Maven command with resolved values
                 
                 bat """
-                mvn clean test ^
+                mvn test ^
                 -DsuiteXmlFile=testng.xml ^
                 -Dgroups="${selectedGroup}" ^
                 -Dbrowser="${selectedBrowser}"

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="tests" thread-count="5">
+
+  
+
+  <listeners>
+ <listener class-name= "Framework.Desgin.TestComponents.Listeners"/>
+ <listener class-name= "Framework.Desgin.TestComponents.RetryListener"/>
+ </listeners>
+ 
+  <test  name="Run by Group">
+
+    <classes>
+      <class name="Framework.Desgin.Tests.LoginTest"/>
+      <class name="Framework.Desgin.Tests.HomepageTest"/>
+      <class name="Framework.Desgin.Tests.CartpageTest"/>
+      <class name="Framework.Desgin.Tests.CheckoutpageTest"/>
+      <class name="Framework.Desgin.Tests.EndToEndTest"/>
+    </classes>
+  </test>
+</suite>

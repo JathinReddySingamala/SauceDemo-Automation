@@ -18,6 +18,10 @@ import org.testng.annotations.BeforeMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import Framework.Design.PageObjects.CartPage;
+import Framework.Design.PageObjects.Checkoutpage1;
+import Framework.Design.PageObjects.Checkoutpage2;
+import Framework.Design.PageObjects.Checkoutpage3;
 import Framework.Design.PageObjects.Homepage;
 import Framework.Design.PageObjects.LoginPage;
 
@@ -26,13 +30,18 @@ public class Basetest extends Driverfactory {
 	public WebDriver driver;
 	public LoginPage loginPage;
 	public Homepage homepage;
+	public CartPage cartPage;
+	public Checkoutpage1 checkoutPage1;
+	public Checkoutpage2 checkoutPage2;
+	public Checkoutpage3 checkoutPage3;
 	
 	@BeforeMethod(alwaysRun = true)
-	public void goTo() throws IOException
+	public LoginPage goTo() throws IOException
 	{
 		driver = getDriver();
 		driver.get("https://www.saucedemo.com/");
 		loginPage = new LoginPage(driver);
+		return loginPage;
 		
 		
 	}
@@ -64,6 +73,6 @@ public class Basetest extends Driverfactory {
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		File file = new File(System.getProperty("user.dir")+"//reports//"+testCaseName + "_" + timeStamp + ".png");
 		FileUtils.copyFile(source, file);
-		return System.getProperty("user.dir")+"//reports//"+testCaseName+".png";
+		return file.getAbsolutePath();
 	}
 }

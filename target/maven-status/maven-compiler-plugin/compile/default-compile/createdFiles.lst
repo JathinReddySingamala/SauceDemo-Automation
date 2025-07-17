@@ -1,4 +1,5 @@
 Framework\Design\PageObjects\Homepage.class
+Framework\Design\Report\ExtentManager.class
 Framework\Design\PageObjects\Checkoutpage3.class
 Framework\Design\Report\ExtentReporterNG.class
 Framework\Design\PageObjects\Checkoutpage1.class

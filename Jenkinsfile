@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        choice(name: 'group', choices: ['smoke', 'regression', 'positive tests', 'negative tests'], description: 'Select test group')
+        choice(name: 'group', choices: ['smoke', 'regression', 'positive tests', 'negative tests'], description: 'Select test group (for TestNG or Cucumber)')
         choice(name: 'browserName', choices: ['chrome', 'chromeheadless', 'firefox', 'edge'], description: 'Select browser')
     }
 
@@ -16,15 +16,22 @@ pipeline {
         stage('Determine Parameters from Commit Message and Run Tests') {
             steps {
                 script {
-                    // Initialize default values from parameters
                     def selectedGroup = params.group
                     def selectedBrowser = params.browserName
+                    def testType = "testng" // default
 
                     // Get latest commit message
                     def commitMsg = bat(script: 'git log -1 --pretty=%%B', returnStdout: true).trim()
                     echo "Commit message: ${commitMsg}"
 
-                    // Update values based on commit message keywords
+                    // Detect test type
+                    if (commitMsg.contains("[cucumber]")) {
+                        testType = "cucumber"
+                    } else if (commitMsg.contains("[testng]")) {
+                        testType = "testng"
+                    }
+
+                    // Detect test group and browser
                     if (commitMsg.contains("[smoke]")) {
                         selectedGroup = 'smoke'
                         selectedBrowser = 'chromeheadless'
@@ -46,24 +53,27 @@ pipeline {
                     } else if (commitMsg.contains("[regression_chrome]")) {
                         selectedGroup = 'regression'
                         selectedBrowser = 'chrome'
-                    } else {
-                        echo "No keyword found in commit message, using parameter defaults."
                     }
 
-                    echo "Final Selected Group: ${selectedGroup}"
-                    echo "Final Selected Browser: ${selectedBrowser}"
+                    echo "Test Type: ${testType}"
+                    echo "Group/Tag: ${selectedGroup}"
+                    echo "Browser: ${selectedBrowser}"
 
-                    // Run Maven command with resolved values
-                
-                bat """
-                mvn clean test ^
-                -DsuiteXmlFile=testng.xml ^
-                -Dgroups="${selectedGroup}" ^
-                -Dbrowser="${selectedBrowser}"
-                """
-
-                    
-
+                    if (testType == "testng") {
+                        bat """
+                            mvn clean test ^
+                            -PTestng ^
+                            -Dgroups="${selectedGroup}" ^
+                            -Dbrowser="${selectedBrowser}"
+                        """
+                    } else if (testType == "cucumber") {
+                        bat """
+                            mvn clean test ^
+                            -PCucumber ^
+                            -Dtags="${selectedGroup}" ^
+                            -Dbrowser="${selectedBrowser}"
+                        """
+                    }
                 }
             }
         }

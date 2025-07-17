@@ -53,6 +53,9 @@ pipeline {
                     } else if (commitMsg.contains("[regression_chrome]")) {
                         selectedGroup = 'regression'
                         selectedBrowser = 'chrome'
+                    }else if (commitMsg.contains("[smoke_chrome]")) {
+                        selectedGroup = 'smoke'
+                        selectedBrowser = 'chrome'
                     }
 
                     echo "Test Type: ${testType}"
@@ -70,7 +73,7 @@ pipeline {
                         bat """
                             mvn clean test ^
                             -PCucumber ^
-                            -Dtags="${selectedGroup}" ^
+                            -Dtags="@${selectedGroup}" ^
                             -Dbrowser="${selectedBrowser}"
                         """
                     }

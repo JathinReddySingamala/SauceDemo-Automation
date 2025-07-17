@@ -73,7 +73,7 @@ pipeline {
                         bat """
                             mvn clean test ^
                             -PCucumber ^
-                            -Dtags="@${selectedGroup}" ^
+                            -Dtag="@${selectedGroup}" ^
                             -Dbrowser="${selectedBrowser}"
                         """
                     }

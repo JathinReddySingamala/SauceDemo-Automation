@@ -58,7 +58,7 @@ public class Step_definations_Impl extends Basetest {
 
 	@When("the user logs in with username {string} and password {string}")
 	public void the_user_logs_in_with_username_and_password(String username, String password) {
-		System.out.println("LoginPage in Step Def: " + loginPage);
+		
     homepage = loginPage.Sign_in(username, password);
     }
 	
